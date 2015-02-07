@@ -1,8 +1,9 @@
 package cl.lucas.App;
 
+import cl.lucas.nota.Nota;
 import java.util.ArrayList;
 import java.util.List;
-import cl.lucas.nota.Nota;
+import java.awt.Font;
 
 /**
  * Clase encargada de gestionar y almacenar cada una de las
@@ -11,7 +12,8 @@ import cl.lucas.nota.Nota;
  */
 public class Controller {
     
-    private static final List<Nota> notas = new ArrayList<>();
+    private final List<Nota> notas = new ArrayList<>();
+    private Font fuenteActual;
 
     public Controller() {
         //Añadir metodo que compruebe si existen notas guardadas,
@@ -20,15 +22,26 @@ public class Controller {
         //y luego crear un archivo para almacenar notas.
     }
     
-    
-    
-    
     //<editor-fold defaultstate="collapsed" desc="Accesadores y Mutadores">
     /**
      * @return Retorna la lista con las notas almacenadas.
      */
-    public static List<Nota> getNotas() {
+    public List<Nota> getNotas() {
         return notas;
+    }
+    
+    /**
+     * @return the fuenteActual
+     */
+    public Font getFuenteActual() {
+        return fuenteActual;
+    }
+
+    /**
+     * @param fuenteActual the fuenteActual to set
+     */
+    public void setFuenteActual(Font fuenteActual) {
+        this.fuenteActual = fuenteActual;
     }
     //</editor-fold>
 }
