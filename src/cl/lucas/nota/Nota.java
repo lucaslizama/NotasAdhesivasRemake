@@ -2,6 +2,7 @@ package cl.lucas.nota;
 
 import javax.swing.*;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -63,10 +64,11 @@ public class Nota extends JFrame{
         //Atributos del area de texto de la nota
         txtNota = new JTextArea("");
         txtNota.setSize(290, 300);
-        txtNota.setLocation(5, 20);
+        txtNota.setLocation(5, 30);
         txtNota.setLineWrap(true);
         txtNota.setWrapStyleWord(true);
         txtNota.setOpaque(false);
+        txtNota.setFont(new Font("Courier New", Font.PLAIN, 18));
         
         
         //Añadir elementos al marco

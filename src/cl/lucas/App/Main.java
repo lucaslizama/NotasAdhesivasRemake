@@ -5,7 +5,7 @@ import cl.lucas.util.DisplayTrayIcon;
 
 /**
  *
- * @author Lucas
+ * @author Lucas Lizama
  */
 public class Main {
     public static void main(String[] args) {
