@@ -24,11 +24,14 @@ public class Nota extends JFrame{
     private Boolean addButtonIsHovered;
     private Point firstClick;
     
+    //<editor-fold defaultstate="collapsed" desc="Constructores">
     public Nota () {
         initComponents();
         addListeners();
     }
+    //</editor-fold>
     
+    //<editor-fold defaultstate="collapsed" desc="Metodos de la Clase">
     private void initComponents(){
         //Atributos del marco de la nota
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -157,7 +160,6 @@ public class Nota extends JFrame{
     });
     }
     
-    //<editor-fold defaultstate="collapsed" desc="Metodos de la Clase">
     private ImageIcon createIcon(String path){
         URL imageURL = Nota.class.getResource(path);
         return new ImageIcon(imageURL);
