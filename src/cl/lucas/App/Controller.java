@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.Font;
 import java.io.File;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
 
 /**
  * Clase encargada de gestionar y almacenar cada una de las notas adhesivas
