@@ -12,6 +12,9 @@ import java.awt.event.ActionListener;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import ZoeloeSoft.projects.JFontChooser.JFontChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -87,6 +90,13 @@ public class DisplayTrayIcon {
             public void actionPerformed(ActionEvent e) {
                 tray.remove(trayIcon);
                 System.exit(0);
+            }
+        });
+        
+        aboutItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Hecho por Lucas Lizama");
             }
         });
     }
