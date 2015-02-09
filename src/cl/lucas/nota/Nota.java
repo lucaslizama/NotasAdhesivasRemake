@@ -1,10 +1,8 @@
 package cl.lucas.nota;
 
-import java.awt.BorderLayout;
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.GridLayout;
 import java.awt.Point;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
