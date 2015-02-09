@@ -18,17 +18,13 @@ public class Controller {
     private Font fuenteActual;
 
     public Controller() {
-        if(buscarArchivo())
-            System.out.println("El archivo existe");
-        else
-            System.out.println("El archivo no existe");
+        Nota n = new Nota();
         //Añadir metodo que compruebe si existen notas guardadas,
         //Si existen debe cargarlas desde el archvivo.
         //En caso contrario debera crear una nota, guardarla en la lista
         //y luego crear un archivo para almacenar notas.
     }
 
-    
     //<editor-fold defaultstate="collapsed" desc="Metodos de la Clase">
     /**
      * Comprueba la existencia del archivo Notes.sav, donde se guardara

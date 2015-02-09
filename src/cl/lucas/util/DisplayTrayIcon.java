@@ -78,7 +78,7 @@ public class DisplayTrayIcon {
         changeFontItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
+
             }
         });
 
@@ -89,7 +89,7 @@ public class DisplayTrayIcon {
                 System.exit(0);
             }
         });
-        
+
         aboutItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

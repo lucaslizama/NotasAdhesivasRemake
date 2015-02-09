@@ -1,9 +1,13 @@
 package cl.lucas.nota;
 
+import java.awt.BorderLayout;
 import javax.swing.*;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.GridLayout;
 import java.awt.Point;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
@@ -39,6 +43,7 @@ public class Nota extends JFrame{
         setUndecorated(true);
         setSize(300, 320);
         setMinimumSize(new Dimension(300, 320));
+        setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
         setLocation(500, 500);
         
         fondo = new FondoNota(createIcon("/cl/lucas/images/nota_fondo.png").getImage());
@@ -64,6 +69,7 @@ public class Nota extends JFrame{
         //Atributos del area de texto de la nota
         txtNota = new JTextArea("");
         txtNota.setSize(290, 300);
+        txtNota.setMinimumSize(new Dimension(290, 300));
         txtNota.setLocation(5, 30);
         txtNota.setLineWrap(true);
         txtNota.setWrapStyleWord(true);
@@ -86,6 +92,31 @@ public class Nota extends JFrame{
     }
     
     private void addListeners(){
+        //Override de los metodos del Component Listener del JFrame
+        addComponentListener(new ComponentListener() {
+            @Override
+            public void componentResized(ComponentEvent e) {
+                Integer x = getSize().width;
+                Integer y = getSize().height;
+                fondo.setSize(x,y);
+                System.out.println(getSize() + " // " + x + " " + y + " // " + fondo.getSize());
+            }
+
+            @Override
+            public void componentMoved(ComponentEvent e) {
+                
+            }
+
+            @Override
+            public void componentShown(ComponentEvent e) {
+                
+            }
+
+            @Override
+            public void componentHidden(ComponentEvent e) {
+            
+            }
+        });
         //Override de los metodos del MouseListener del boton cerrar
         closeButton.addMouseListener(new MouseAdapter() {
             @Override

@@ -1,5 +1,6 @@
 package cl.lucas.nota;
 
+import cl.lucas.util.ImageDrawer;
 import java.awt.Graphics;
 import java.awt.Image;
 import javax.swing.JPanel;
@@ -8,22 +9,22 @@ import javax.swing.JPanel;
  *
  * @author Lucas
  */
-public class FondoNota extends JPanel{
-    
+public class FondoNota extends JPanel {
+
     private Image fondo;
 
-    public FondoNota(){}
+    public FondoNota() {
+    }
 
     public FondoNota(Image fondo) {
         this.fondo = fondo;
     }
 
     @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        g.drawImage(fondo, 0, 0, null);
+    public void paintComponent(Graphics g) {
+        ImageDrawer.drawStretchedImage(fondo, this, g);
     }
-    
+
     //<editor-fold defaultstate="collapsed" desc="Accesadores y Mutadores">
     /**
      * @return the fondo
