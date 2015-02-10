@@ -19,7 +19,8 @@ public class Nota extends JFrame{
     
     private JLabel closeButton;
     private JLabel addButton;
-    private JLabel topBar;
+    //private JLabel topBar;
+    private BarraNota topbar;
     private JLabel noteBackground;
     private JTextArea txtNota;
     private FondoNota fondo;
@@ -41,7 +42,6 @@ public class Nota extends JFrame{
         setUndecorated(true);
         setSize(300, 320);
         setMinimumSize(new Dimension(300, 320));
-        setMaximumSize(new Dimension(Integer.MAX_VALUE, Integer.MAX_VALUE));
         setLocation(500, 500);
         
         fondo = new FondoNota(createIcon("/cl/lucas/images/nota_fondo.png").getImage());
@@ -50,9 +50,13 @@ public class Nota extends JFrame{
         fondo.setLocation(0, 0);
         
         //Atributos de la barra superior
-        topBar = new JLabel(createIcon("/cl/lucas/images/nota_barra.png"));
-        topBar.setSize(300, 30);
-        topBar.setLocation(0, 0);
+        //topBar = new JLabel(createIcon("/cl/lucas/images/nota_barra.png"));
+        //topBar.setSize(300, 30);
+        //topBar.setLocation(0, 0);
+        topbar = new BarraNota(createIcon("/cl/lucas/images/nota_barra.png").getImage());
+        topbar.setSize(300, 30);
+        topbar.setLocation(0, 0);
+        topbar.setLayout(null);
         
         //Atributos del boton que cierra la nota
         closeButton = new JLabel(createIcon("/cl/lucas/images/boton_cerrar.png"));
@@ -77,10 +81,10 @@ public class Nota extends JFrame{
         
         //Añadir elementos al marco
         add(fondo);
-        fondo.add(topBar);
+        fondo.add(topbar);
         fondo.add(txtNota);
-        topBar.add(closeButton);
-        topBar.add(addButton);
+        topbar.add(closeButton);
+        topbar.add(addButton);
         pack();
         setVisible(true);
         
@@ -97,6 +101,8 @@ public class Nota extends JFrame{
                 Integer x = getSize().width;
                 Integer y = getSize().height;
                 fondo.setSize(x,y);
+                topbar.setSize(x, 30);
+                closeButton.setLocation((x - 21), 1);
                 System.out.println(getSize() + " // " + x + " " + y + " // " + fondo.getSize());
             }
 
@@ -165,14 +171,14 @@ public class Nota extends JFrame{
             }
     });
         //Override de los metodos del MouseListener de la barra de menu
-        topBar.addMouseListener(new MouseAdapter() {
+        topbar.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent me) {
                 firstClick = me.getPoint();
             }
     });
         //Override de los metodos del MouseMotionListener de la barra de menu
-        topBar.addMouseMotionListener(new MouseMotionAdapter() {
+        topbar.addMouseMotionListener(new MouseMotionAdapter() {
             @Override
             public void mouseDragged(MouseEvent me) {
                 // get location of window
@@ -243,15 +249,15 @@ public class Nota extends JFrame{
     /**
      * @return the topBar
      */
-    public JLabel getTopBar() {
-        return topBar;
+    public BarraNota getTopBar() {
+        return topbar;
     }
 
     /**
      * @param topBar the topBar to set
      */
-    public void setTopBar(JLabel topBar) {
-        this.topBar = topBar;
+    public void setTopBar(BarraNota topBar) {
+        this.topbar = topBar;
     }
 
     /**
