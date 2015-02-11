@@ -32,7 +32,7 @@ public class Controller {
      * @return Retorna true si existe el archivo, false en caso contrario.
      */
     private Boolean buscarArchivo(){
-        //Implementar luego para otrosOS ademas de windows
+        //Implementar luego para otros OS ademas de windows
         File save = new File("C:\\Users\\Lucas\\Documents\\Lucas Sticky Notes\\Notes.sav");
         return save.exists();
     }

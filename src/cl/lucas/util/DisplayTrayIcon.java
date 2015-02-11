@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Lucas
+ * @author Lucas Lizama
  */
 public class DisplayTrayIcon {
 
@@ -28,20 +28,6 @@ public class DisplayTrayIcon {
 
     public DisplayTrayIcon() {
         showTrayIcon();
-    }
-
-    private void showTrayIcon() {
-        if (!SystemTray.isSupported()) {
-            System.out.println("System is not supported");
-            System.exit(0);
-        } else {
-            initComponents();
-            addListeners();
-            try {
-                tray.add(trayIcon);
-            } catch (AWTException e) {
-            }
-        }
     }
 
     //<editor-fold defaultstate="collapsed" desc="Metodos de la Clase">
@@ -98,6 +84,23 @@ public class DisplayTrayIcon {
         });
     }
 
+    /**
+     * Metodo que muestra el TrayIcon
+     */
+    private void showTrayIcon() {
+        if (!SystemTray.isSupported()) {
+            System.out.println("System is not supported");
+            System.exit(0);
+        } else {
+            initComponents();
+            addListeners();
+            try {
+                tray.add(trayIcon);
+            } catch (AWTException e) {
+            }
+        }
+    }
+    
     /**
      * Metodo que devuelve la imagen del URL ingresado por parametro.
      *
